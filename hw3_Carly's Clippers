@@ -1,0 +1,34 @@
+hairstyles = ["bouffant", "pixie", "dreadlocks", "crew", "bowl", "bob", "mohawk", "flattop"]
+
+prices = [30, 25, 40, 20, 20, 35, 50, 35]
+
+last_week = [2, 3, 5, 8, 4, 4, 6, 2] #리스트 3개 작성
+
+total_price = 0
+
+total_revenue = 0 # 토탈이들 선언
+
+for price in prices:
+  total_price += price #총 가격에 값 입력
+
+average_price = total_price / len(prices)
+print("Average Price: " + str(average_price)) #평균 가격 구하기
+
+new_prices = [price - 5 for price in prices]
+print(new_prices) #원래 값에서 5씩 빼기
+
+for i in range(len(hairstyles)):
+  total_revenue += prices[i] * last_week[i] #총 수입에 값 입력
+
+average_daily_revenue = total_revenue / 7
+print("Average Daily Revenue " + str(average_daily_revenue)) #평균 하루수입 구하기
+
+#print(range(0, (len(hairstyles) - 1)))
+cuts_under_30 = [hairstyles[i] for i in range(0, (len(hairstyles) - 1)) if new_prices[i] < 30]
+
+print(cuts_under_30)# 가격이 30이하인 헤어스타일 
+---------------------------------------------------------------------------------------------------------------------------------------------
+Average Price: 31.875
+[25, 20, 35, 15, 15, 30, 45, 30]
+Average Daily Revenue 155.0
+['bouffant', 'pixie', 'crew', 'bowl']
